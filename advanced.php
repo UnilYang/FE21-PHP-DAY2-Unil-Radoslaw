@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Advanced</title>
 </head>
 <body>
-<form  method ="POST">
-Degrees in F: <input type="number"   name="degrees" /><br>
+<form class="form text-center fs-4" method ="POST">
+Degrees in F:<br><br><input type="number"   name="degrees" /><br><br>
 <input  type="submit"  name="submit"  />
-</form>
+</form><div class="text-center fs-4">
     <?php 
    /*1- Create a function that can convert °F in °C and show the result on the screen.
       2- You can play with the results creating conditionals 
@@ -25,7 +27,7 @@ Degrees in F: <input type="number"   name="degrees" /><br>
   $degrees = "degrees";
   function convertDegrees($degrees){
     $result = ($degrees - 32) * 5/9;
-    echo "Degrees in C: " . (round($result)) . "°<br>";
+    echo "<br>Degrees in C: " . (round($result)) . "°<br>";
     return $result;
   }
     
@@ -37,25 +39,26 @@ Degrees in F: <input type="number"   name="degrees" /><br>
       switch( $result)
         {
            case $result <6:
-           echo "very cold";
+           echo "<br><p>very cold</p><br><img src='img/verycold.jpg' width='30%' class='rounded'>";
            break;
             case $result >5 and $result <11:
-              echo "cold<br>";
+              echo "<br><p>cold</p><br><img src='img/cold.jpg' width='30%' class='rounded'>";
               break;
                case $result >10 and $result<16:
-               echo "pleasant<br>";
+               echo "<br><p>pleasant</p><br><img src='img/pleasant.jpg' width='30%' class='rounded'>";
                break;
                case $result >15 and $result<21:
-               echo "warm<br>";
+               echo "<br><p>warm</p><br><img src='img/hot.jpg' width='30%' class='rounded'>";
                break;
                   case $result >20:
-                    echo "hot<br>";
+                    echo "<br><p>hot</p><br><img src='img/veryhot.jpg' width='30%' class='rounded'>";
                     break;
           default:
-                  echo "please enter degrees in F to convert to C";
+                  echo "<br><p>please enter degrees in F to convert to C</p>";
         }
     }
 
-    ?>
+    ?></div>
+    <footer class="text-center py-2 fs-5 mt-2">Radek Slowinski - 2021</footer>
 </body>
 </html>

@@ -1,0 +1,22 @@
+p{
+    background-color: brown;
+    color: rgb(173, 233, 235);
+    justify-content: center;
+}
+.form{
+    background-color: brown;
+    color: rgb(173, 233, 235);
+    justify-content: center;
+}
+body{
+    background-color: brown;
+    color: rgb(173, 233, 235);
+    justify-content: center;
+    padding-top: 1em;
+}
+footer{
+    background-color: darkslategray;
+    color: khaki;
+    clear: both;
+    
+}
