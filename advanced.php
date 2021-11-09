@@ -16,7 +16,7 @@
     From 11°C to 15°C: Pleasant
     From 16°C to 20°C: Warm
     Above 21°C: Hot
-    Use Bootstrap to show yours results on the screen. */
+    Use Bootstrap to show yours results on the screen. (32 °F − 32) × 5/9 = 0 °C */
 
 
     ?>

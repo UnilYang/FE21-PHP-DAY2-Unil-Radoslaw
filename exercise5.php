@@ -18,7 +18,7 @@ The function should accept only one argument. E.g. If we call the function and p
     echo "$minput minutes are " . (round($hours)) . " hours and $minutes minutes";
     }
 
-    timeFunction(500);
+    timeFunction(200);
 
     ?>
 </body>

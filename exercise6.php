@@ -22,9 +22,11 @@ Age: <input type ="text"  name="age" /><br>
     Use the GET method to extract and display the hobbies */
     if( isset($_POST['submit']))
 {
-    if( $_POST["firstname"] || $_POST["lastname"] )
+    if( $_POST["firstname"] || $_POST["lastname"] || $_POST["age"] )
     {
-        echo "Welcome ". $_POST[ 'firstname'] . ' ' . $_POST['lastname'] . "<br />" ;
+        echo "<div>Your first name: ". $_POST[ 'firstname'] . " .</div><br>" ;
+        echo "<div>Your last name: ". $_POST[ 'lastname'] . " .</div><br>" ;
+        echo "<div>And your age is: ". $_POST[ 'age'] . " .</div><br>" ;
     }
 }
 
