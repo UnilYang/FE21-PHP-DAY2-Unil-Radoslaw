@@ -21,7 +21,7 @@ if( isset($_POST['submit']))
 {
     if( $_POST["firstname"] || $_POST["lastname"] )
     {
-        echo "Welcome ". $_POST[ 'firstname'] . ' ' . $_POST['lastname'] . "<br>" ;
+        echo "Welcome ". $_POST[ 'firstname'] . ' ' . $_POST['lastname'] . "!<br>" ;
     }else{
         echo "please insert your name, or please insert your surname.";
     }

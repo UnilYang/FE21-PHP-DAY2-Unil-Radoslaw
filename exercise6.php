@@ -12,6 +12,7 @@
 First Name: <input type="text"   name="firstname" /><br>
 Last Name: <input type ="text"  name="lastname" /><br>
 Age: <input type ="text"  name="age" /><br>
+Hobbies: <input type="text" name="hobbies" /><br>
 <input  type="submit"  name="submit"  />
 </form>
     <?php 
@@ -20,15 +21,23 @@ Age: <input type ="text"  name="age" /><br>
     If the length of your name is larger than 5 characters, change the text colour to green. Otherwise, 
     change the text-colour to red.Now extend with adding a new input field "hobbies". 
     Use the GET method to extract and display the hobbies */
-    if( isset($_POST['submit']))
+    if(isset($_POST['submit']) /*&& ($_GET['submit'])*/)
 {
-    if( $_POST["firstname"] || $_POST["lastname"] || $_POST["age"] )
+    if( $_POST["firstname"] || $_POST["lastname"] || $_POST["age"] /*|| $_GET["hobbies"]*/ )
     {
-        echo "<div>Your first name: ". $_POST[ 'firstname'] . " .</div><br>" ;
-        echo "<div>Your last name: ". $_POST[ 'lastname'] . " .</div><br>" ;
-        echo "<div>And your age is: ". $_POST[ 'age'] . " .</div><br>" ;
+        echo "<div>Your first name: ". $_POST[ 'firstname'] . ".</div><br>" ;
+        echo "<div>Your last name: ". $_POST[ 'lastname'] . ".</div><br>" ;
+        echo "<div>And your age is: ". $_POST[ 'age'] . ".</div><br>" ;
+       /* echo "<div>Your hobbies are: " . $_GET['hobbies'] . ".</div><br>";*/
     }
 }
+    /*if(isset($_GET[ 'submit']))
+       {
+           if( $_GET["hobbies"] )
+           {
+               echo "<div>Your hobbies are: " . $_GET['hobbies'] . ".</div><br>";
+           }
+       }*/
 
 
     ?>
