@@ -23,29 +23,33 @@ Degrees in F: <input type="number"   name="degrees" /><br>
     Above 21°C: Hot
     Use Bootstrap to show yours results on the screen. (32 °F − 32) × 5/9 = 0 °C */
   $degrees = "degrees";
-  if( isset($_POST['submit']))
-  {
   function convertDegrees($degrees){
     $result = ($degrees - 32) * 5/9;
-    echo "Degrees in C: " . $result;
+    echo "Degrees in C: " . (round($result)) . "°<br>";
+    return $result;
   }
-  convertDegrees("degrees");    
+    
+  if( isset($_POST['submit']))
+  {
+    $result = convertDegrees($_POST["degrees"]);
+  
+      
       switch( $result)
         {
            case $result <6:
            echo "very cold";
            break;
             case $result >5 and $result <11:
-              echo "cold";
+              echo "cold<br>";
               break;
                case $result >10 and $result<16:
-               echo "pleasant";
+               echo "pleasant<br>";
                break;
                case $result >15 and $result<21:
-               echo "warm";
+               echo "warm<br>";
                break;
                   case $result >20:
-                    echo "hot";
+                    echo "hot<br>";
                     break;
           default:
                   echo "please enter degrees in F to convert to C";
