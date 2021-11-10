@@ -10,7 +10,7 @@
 </head>
 <body>
 <form class="form text-center fs-4" method ="POST">
-Degrees in F:<br><br><input type="number"   name="degrees" /><br><br>
+Degrees in F:<br><br><input type="text"   name="degrees" /><br><br>
 <input  type="submit"  name="submit"  />
 </form><div class="text-center fs-4">
     <?php 
@@ -24,8 +24,10 @@ Degrees in F:<br><br><input type="number"   name="degrees" /><br><br>
     From 16°C to 20°C: Warm
     Above 21°C: Hot
     Use Bootstrap to show yours results on the screen. (32 °F − 32) × 5/9 = 0 °C */
-  $degrees = "degrees";
   function convertDegrees($degrees){
+    if(!$degrees){
+      return false; 
+    }
     $result = ($degrees - 32) * 5/9;
     echo "<br>Degrees in C: " . (round($result)) . "°<br>";
     return $result;
@@ -33,9 +35,16 @@ Degrees in F:<br><br><input type="number"   name="degrees" /><br><br>
     
   if( isset($_POST['submit']))
   {
-    $result = convertDegrees($_POST["degrees"]);
+    if($_POST["degrees"]){
+      $value = $_POST["degrees"];
+    }else {
+      $value = false;
+    }
+    $result = convertDegrees($value);
   
-      
+      if(!$result){
+        echo "please insert a number";
+      }else {
       switch( $result)
         {
            case $result <6:
@@ -57,7 +66,7 @@ Degrees in F:<br><br><input type="number"   name="degrees" /><br><br>
                   echo "<br><p>please enter degrees in F to convert to C</p>";
         }
     }
-
+  }
     ?></div>
     <footer class="text-center py-2 fs-5 mt-2">Radek Slowinski - 2021</footer>
 </body>
